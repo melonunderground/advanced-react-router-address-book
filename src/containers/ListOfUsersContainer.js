@@ -2,19 +2,19 @@ import { connect } from 'react-redux';
 import ListOfUsers from "../components/ListOfUsers";
 import {chooseUser} from "../actions";
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
     users: state.users,
     searchText: state.searchText
-  }
+  };
 }
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
   return {
-    setUser:function(user){
+    setUser: function (user) {
       dispatch(chooseUser(user));
     }
-  }
+  };
 }
 
 const ListOfUsersContainer = connect(mapStateToProps,mapDispatchToProps)(ListOfUsers);
-export default ListOfUsersContainer
+export default ListOfUsersContainer;

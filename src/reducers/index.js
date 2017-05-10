@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import {combineReducers} from "redux";
 
 function users(state = [],action) {
   if (action.type === "USERS_LOADED") {
@@ -6,8 +6,8 @@ function users(state = [],action) {
   }
   return state;
 }
-function currentUser(state={},action){
-  if( action.type === "CHOOSE_USER"){
+function currentUser(state = {},action) {
+  if (action.type === "CHOOSE_USER") {
     return action.value;
   }
   if (action.type === "USERS_LOADED") {
@@ -15,17 +15,17 @@ function currentUser(state={},action){
   }
   return state;
 }
-function searchText(state="",action){
-  if(action.type === "SET_SEARCH_TEXT"){
+function searchText(state = "",action) {
+  if (action.type === "SET_SEARCH_TEXT") {
     return action.value;
   }
   return state;
 }
-function filteredUsers(state=[],action){
+function filteredUsers(state = [],action) {
   return state;
 }
 
 const rootReducer = combineReducers({
- users,searchText,currentUser,filteredUsers
+  users,searchText,currentUser,filteredUsers
 });
 export default rootReducer;
